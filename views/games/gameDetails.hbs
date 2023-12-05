@@ -1,0 +1,26 @@
+<body>
+
+    <div class="container gameDetails" style="widht 50%">
+
+        <div class="card mb-3">
+
+            <img src="{{game.background_image}}" class="card-img-top" alt="...">
+
+            <div class="card-body">
+                <h5 class="card-title">{{game.name}}</h5>
+                <p class="card-text">{{{game.description}}}</p>
+
+                <h5>Géneros:</h5>
+
+                {{#each game.genres}}
+                {{name}} /
+                {{/each}}
+
+            </div>
+
+        </div>
+
+    </div>
+    <br>
+
+</body>

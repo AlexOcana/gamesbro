@@ -1,0 +1,34 @@
+<body>
+
+    <div class="container">
+        <h1>Eventos</h1>
+        <a href="/events/create" class="btn btn-dark" style="margin-bot: 5px">Nuevo Evento</a>
+        {{!-- <a href=" /maps" class="btn btn-dark">Ver en el mapa</a> --}}
+        <hr>
+
+        {{#each events }}
+        <div class="card mt-3 mb-4 bg-transparent" style="max-width: 100%;">
+            <div class="row g-0">
+                <div class="col-md-4 bg-transparent">
+                    <img src="{{eventImg}}" class="img-fluid rounded-start" alt="Event Image" style="max-width: 100%;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{eventName}}</h5>
+                        <p class="card-text">Descripción: {{description}}</p>
+                        <a href="/events/details/{{_id}}" class="btn btn-dark">Detalles</a>
+
+                        {{#if userRoles.isAdmin}}
+                        <form action="/events/delete/{{_id}}" method="POST">
+                            <input type="submit" value="Delete">
+                        </form>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+
+</body>
